@@ -1,0 +1,737 @@
+/* Global Assets */
+
+:root {
+  --primary-color: rgb(233, 99, 4);
+  --secondary-color: rgb(43, 42, 43);
+  --pargraph-color: #2b2a2b;
+
+  --text-color: rgb(0, 0, 0); /* h1*/
+
+  --font-small: 14px;
+  --font-medium: 25px;
+  --font-large: 40px;
+  --font-xl: 100px; /* big*/
+
+  --primary-background-color: #f8f9fa;
+  --primary-background-color: #e9630470;
+
+  --primary-font-weight: 400; /* paragraph*/
+  --secondary-font-weight: 500; /* small big */
+  --tertiary-font-weight: 600; /* big*/
+
+  --primary-letter-spacing: -0.6px; /* big*/
+
+  --primary-line-height: 1.7em; /* paragraph*/
+  --secondary-line-height: 1.1em; /* small big */
+  --tertiary-line-height: 1em; /* big*/
+
+  --primary-background-image: url("../assets/backgroundgradient.png");
+  --secoundary-background-image: url("../assets/hashbg.png");
+  --footer-background-image: url("../assets/hashbg.png");
+
+  --primary-font-family: "Belleza", serif; /* big*/ /* small big */
+  --secondary-font-family: "DM Sans", sans-serif; /* paragraph*/
+}
+
+/* Official Tag*/
+
+body {
+  background-color: var(--background-color);
+  color: var(--text-color);
+  font-family: var(--font-family);
+}
+
+h1 {
+  font-size: var(--font-xl);
+  color: var(--text-color);
+  font-family: var(--primary-font-family);
+  letter-spacing: var(--primary-letter-spacing);
+  line-height: var(--tertiary-line-height);
+}
+h2 {
+  font-size: var(--font-large);
+  color: var(--text-color);
+  font-family: var(--primary-font-family);
+  letter-spacing: var(--primary-letter-spacing);
+  font-weight: var(--primary-font-weight);
+}
+h3 {
+  font-size: var(--font-medium);
+  color: var(--primary-color);
+  font-family: var(--primary-font-family);
+  letter-spacing: var(--primary-letter-spacing);
+}
+
+p {
+  font-size: var(--font-small);
+  color: var(--pargraph-color);
+  font-family: var(--secondary-font-family);
+  font-weight: var(--primary-font-weight);
+  line-height: var(--primary-line-height);
+}
+
+
+@media (max-width: 768px) {
+  h1 {
+    font-size: var(--font-medium); 
+  }
+}
+
+/* Divider*/
+
+.x-divider {
+  width: 100%;
+  height: 1px;
+  background-color: var(--text-color);
+  margin: 20px 0;
+}
+
+/* Navbar */
+
+.navbar {
+  border-bottom: 1px solid rgb(0, 0, 0);
+  background-image: var(--primary-background-image);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  padding: 1.5rem 0;
+}
+
+.navbar-brand {
+  font-family: "Arial", sans-serif;
+  font-weight: bold;
+  font-size: 1.5rem;
+  display: flex;
+  align-items: center;
+}
+
+.navbar-brand img {
+  width: 150px;
+  height: 40px;
+  margin-right: 5px;
+}
+
+.nav-link {
+  font-size: var(--font-small);
+  color: rgb(0, 0, 0);
+  font-weight: 400;
+  letter-spacing: normal;
+  line-height: 24px;
+  font-family: "Belleza, serif";
+}
+
+.nav-link:hover {
+  color: #fc8c47;
+}
+
+.nav-link.active {
+  color: #fc8c47;
+}
+
+.btn-service {
+  background-color: #fc8c47;
+  color: white;
+  font-weight: 400;
+  border-radius: 7px;
+  font-size: var(--font-small);
+}
+
+.btn-service:hover {
+  color: white;
+  background-color: #fc8c47;
+}
+
+/* 01. Home Pge */
+
+/* First Banner */
+
+.textile-section {
+  background-image: var(--primary-background-image);
+  padding: 8rem;
+}
+
+@media (max-width: 900px) {
+  .textile-section {
+    padding: 1rem;
+  }
+}
+
+.cards-row-firstbanner {
+  --bs-gutter-x: 3.5rem;
+  background-image: var(--primary-background-image);
+}
+
+.cards-row .card {
+  background-image: var(--primary-background-image);
+}
+
+/* First Banner -> Spinner secound card */
+.spinning-circle-container {
+  position: relative;
+  width: 100%;
+  height: 450px;
+  margin-top: 60px;
+}
+
+.spinning-circle {
+  position: absolute;
+  top: -20px;
+  right: -20px;
+  width: 100px;
+  height: 100px;
+  background-color: #000;
+  border-radius: 50%;
+  animation: spin 20s linear infinite;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 3;
+}
+
+.spinning-circle::after {
+  content: '';
+  position: absolute;
+  width: 60%;
+  height: 60%;
+  background-color: #000;
+  border-radius: 50%;
+}
+
+.circular-text {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  animation: counter-spin 20s linear infinite;
+  z-index: 4;
+}
+
+.card-img-container {
+  position: relative;
+  height: 100%;
+}
+
+.card-img-top {
+  height: 100%;
+  object-fit: cover;
+  position: relative;
+}
+
+.center-star {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: var(--primary-color);
+  font-size: 5rem;
+  z-index: 5;
+}
+
+@keyframes spin {
+  from {
+      transform: rotate(0deg);
+  }
+  to {
+      transform: rotate(360deg);
+  }
+}
+
+@keyframes counter-spin {
+  from {
+      transform: rotate(0deg);
+  }
+  to {
+      transform: rotate(-360deg);
+  }
+}
+
+/* Secound Banner */
+
+.manufacture-section {
+  padding: 8rem ;
+  position: relative;
+  background-image: url('../assets/lamback.png'), var(--secoundary-background-image);
+  background-position: left bottom, right top; 
+  background-size: 40% auto, 15% auto; 
+  background-repeat: no-repeat;
+
+}
+
+@media (max-width: 900px) {
+  .manufacture-section {
+    padding: 1rem;
+  }
+}
+/* Services Banner */
+.display-4 {
+}
+
+.services-section {
+  position: relative;
+  background-image: var(--primary-background-image);
+  padding: 8rem ;
+}
+@media (max-width: 900px) {
+  .services-section {
+    padding: 1rem;
+  }
+}
+.services-section::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 1px;
+  background-color: rgba(0, 0, 0, 0.1);
+}
+
+.service-card {
+  padding: 2rem;
+  background: transparent;
+  border: none;
+  transition: all 0.3s ease;
+  position: relative;
+}
+
+.service-card::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  width: 1px;
+  background-color: rgba(0, 0, 0, 0.1);
+}
+
+.col-md-6:last-child .service-card::after {
+  display: none;
+}
+
+.service-icon {
+  font-size: 2.5rem;
+  color: #1a1a1a;
+}
+
+.service-card h3 {
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+  font-weight: 500;
+}
+
+.service-card p {
+  color: #666;
+  font-size: 0.95rem;
+  line-height: 1.6;
+}
+
+.moving-text {
+  white-space: nowrap;
+  display: inline-block;
+  animation: moveLeft 15s linear infinite;
+}
+
+@keyframes moveLeft {
+  0% {
+    transform: translateX(-100%);
+  }
+  100% {
+    transform: translateX(100%);
+  }
+}
+
+@media (max-width: 768px) {
+  .display-4 {
+    font-size: calc(1.475rem + 2.7vw);
+  }
+
+  .service-card::after {
+    display: none;
+  }
+}
+
+/* Defect-free Banner */
+.Defectfree-section {
+  padding: 8rem ;
+  position: relative;
+  background-image: url('../assets/lamback.png'), var(--secoundary-background-image);
+  background-position: left bottom, right top; 
+  background-size: 15% auto, 15% auto; 
+  background-repeat: no-repeat;
+}
+@media (max-width: 900px) {
+  .Defectfree-section {
+    padding: 1rem;
+  }
+}
+.btn-primary {
+  background-color: var(--primary-color);
+  border: none;
+  padding: 0.8rem 2rem;
+  font-weight: 500;
+  transition: transform 0.2s ease;
+}
+
+.btn-primary:hover {
+  background-color: #e64500;
+  /* transform: translateY(-2px); */
+}
+
+
+@keyframes count {
+  0% {
+      content: "0";
+  }
+  100% {
+      content: "98";
+  }
+}
+
+
+/* Youtube-Image Banner */
+
+.youtube-image-section {
+  height: 50vh;
+}
+
+/* History Section Banner */
+
+.history-section { 
+  background-image: var(--primary-background-image);
+  padding: 8rem ;
+}
+@media (max-width: 900px) {
+  .history-section {
+    padding: 1rem;
+  }
+}
+
+.timeline-year {
+  color: var(--primary-color);
+  opacity: 0.4;
+}
+
+/* History Stepper */
+
+.stepper-wrapper {
+  margin-top: auto;
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 64px;
+}
+.stepper-item {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  flex: 1;
+
+  @media (max-width: 768px) {
+    font-size: 12px;
+  }
+}
+
+.stepper-item::before {
+  position: absolute;
+  content: "";
+  border-bottom: 2px solid #ccc;
+  width: 100%;
+  top: 20px;
+  left: -50%;
+  z-index: 2;
+}
+
+.stepper-item::after {
+  position: absolute;
+  content: "";
+  border-bottom: 2px solid #ccc;
+  width: 100%;
+  top: 20px;
+  left: 50%;
+  z-index: 2;
+}
+
+.stepper-item .step-counter {
+  position: relative;
+  z-index: 5;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background:var(--primary-color);
+  margin-bottom: 6px;
+}
+
+.stepper-item.active {
+  font-weight: bold;
+}
+
+.stepper-item.completed .step-counter {
+  background-color: var(--primary-color);
+}
+
+.stepper-item.completed::after {
+  position: absolute;
+  content: "";
+  border-bottom: 2px solid var(--primary-color);
+  width: 100%;
+  top: 20px;
+  left: 50%;
+  z-index: 3;
+}
+
+.stepper-item:first-child::before {
+  content: none;
+}
+.stepper-item:last-child::after {
+  content: none;
+}
+
+@media (max-width: 991.98px) {
+  .image-container {
+    margin-bottom: 2rem;
+  }
+}
+
+/* Faq Banner */
+.faq-section {
+  padding: 8rem ;
+  position: relative;
+  background-image: url('../assets/lamback.png'), var(--secoundary-background-image);
+  background-position: right bottom, right top; 
+  background-size: 30% auto, 15% auto; 
+  background-repeat: no-repeat;
+}
+@media (max-width: 900px) {
+  .faq-section {
+    padding: 1rem;
+  }
+}
+.faq-header {
+  color: var(--primary-color);
+}
+.accordion-item {
+  border: none;
+  background-color: inherit;
+}
+.accordion-button {
+  background-color: transparent;
+  font-size: var(--font-medium) !important;
+  box-shadow: none;
+  border: none;
+  margin-top: 64px !important;
+  padding: 0% !important;
+}
+.accordion-button:focus {
+  box-shadow: none;
+}
+.accordion-button:not(.collapsed) {
+  color: var(--primary-color);
+  background-color: transparent;
+}
+.accordion-body {
+  background-color: transparent;
+  color: #333;
+}
+
+/* Footer Banner */
+
+.footer-section {
+  position: relative;
+  background: url("https://factorika.peerduck.com/wp-content/uploads/2024/01/rwynwryn.jpg")
+    no-repeat center center/cover;
+  height: 70vh;
+  padding: 8rem ;
+}
+@media (max-width: 900px) {
+  .footer-section {
+    padding: 1rem;
+  }
+}
+
+.footer-section::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  z-index: 1;
+}
+
+.footer-content {
+  position: relative;
+  z-index: 1;
+  text-align: center;
+  padding: 2rem;
+}
+
+
+
+/* ProductionGallery */
+.youtube-imagegroup-section {
+  padding: 8rem ;
+
+}
+
+
+
+
+/* About Us Page */
+
+.footer-about-section {
+  position: relative;
+  /* background: url("https://factorika.peerduck.com/wp-content/uploads/2024/01/rwynwryn.jpg")
+    no-repeat center center/cover; */
+  /* height: 70vh; */
+  position: relative;
+  background-image:  var(--secoundary-background-image),var(--primary-background-image);
+  background-position: right top, center; 
+  background-size: 10% auto, 100% auto; 
+  background-repeat: no-repeat;
+  padding: 8rem ;
+}
+@media (max-width: 900px) {
+  .footer-about-section {
+    padding: 1rem;
+  }
+}
+.footer-about-section::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  /* background: rgba(0, 0, 0, 0.5); */
+  z-index: 1;
+}
+
+.footer-content {
+  position: relative;
+  z-index: 1;
+  text-align: center;
+  padding: 2rem;
+}
+
+/* Contact Page */
+.contact-section  {
+  padding: 5rem 0;
+  
+}
+.contact-section .row {
+  display: flex;
+  align-items: stretch; 
+
+
+}
+
+.contact-form-column {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between; 
+  background-color: white ;
+  padding: 4rem  ;
+
+}
+
+.contact-image img {
+  object-fit: cover;
+  width: 100%;
+  height: 100%;
+}
+
+.contact-form {
+  display: flex;
+  flex-direction: column;
+}
+
+.contact-form .form-group {
+  margin-bottom: 1rem;
+}
+
+
+.contact-info {
+  text-align: center;
+  margin-top: 2rem;
+}
+
+.contact-icon i {
+  background-color: orange;  
+  color: white;              
+  padding: 10px;             
+  border-radius: 50%;        
+  margin-right: 10px;       
+  font-size: 20px;           
+}
+
+/* Contact Page-> Contact Info */
+.full-contact-info{
+  background-color: black;
+}
+.contact-bar-section a {
+  text-decoration: none;
+  color: white;  
+   
+}
+.contact-bar-section {
+  padding: 2rem;
+
+}
+
+.contact-bar-section a {
+  text-decoration: none;
+  color: white;
+  display: flex;
+  align-items: center;
+}
+
+.contact-bar-section i {
+  margin-right: 8px;
+}
+
+@media (max-width: 767px) {
+  .contact-bar-section .col-md-3 {
+      text-align: center;
+  }
+}
+
+
+/* Contact Page-> FindUs */
+
+
+.find-us-section {
+  padding: 8rem ;
+
+}
+@media (max-width: 900px) {
+  .find-us-section {
+    padding: 1rem;
+  }
+}
+
+.office-address {
+  margin-bottom: 30px;
+}
+
+.office-address h2 {
+  font-weight: 700;
+  margin-bottom: 10px;
+}
+
+.office-address p {
+  color: #6c757d;
+}
+
+.map-container {
+  border: 1px solid #ced4da; 
+  height: 400px;
+}
+
+@media (max-width: 768px) {
+  .map-container {
+      height: 300px; 
+  }
+}
